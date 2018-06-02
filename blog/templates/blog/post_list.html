@@ -7,19 +7,13 @@
           <h1><a href="/">Hanoi lovers' blog</a></h1>
       </div>
 
-      <div>
-        <p>published: 02.06.2018, 14:29</p>
-        <h2><a href="">The beautiful weather</a></h2>
-        <p>This is the summer time in Hanoi. The temperature is high so people prefer to stay at home. However, lots of city-dwellers will go out in the evening to enjoy the cool air</p>
-      </div>
-
-      <div>
-        <p>published:03.06.2018, 14:35</p>
-        <h2><a href="">Hoan Kiem Lake</a></h2>
-        <p>There is a very interesting story on how the lake was named "Returning the Sword". If you visit Hanoi, do not miss walking around the lake and visiting Ngoc Son Temple ^^</p>
-      </div>
-
-      
-
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    
+{% endfor %}
     </body>
 </html>
